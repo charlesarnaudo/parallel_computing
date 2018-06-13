@@ -10,7 +10,7 @@ void printMat(double** mat, int sz);
 
 int main(int argv, char* argc[]) {
     // size of matrix sz x sz
-    int sz = 5;
+    int sz = 25;
     
     // allocating multiplying matrix
     double** mat = allocateMat(sz);
@@ -42,8 +42,8 @@ double** allocateMat(int sz) {
 }
 
 void assignMat(double** mat, int sz) {
-    for (int i = 0; i < 5; i++) {
-        for (int j = 0; j < 5; j++){
+    for (int i = 0; i < sz; i++) {
+        for (int j = 0; j < sz; j++){
             mat[i][j] = 2.0;
         }
     }
