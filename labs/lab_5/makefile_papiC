@@ -1,0 +1,27 @@
+CC = gcc
+LDC = gcc
+LD_FLAGS = /opt/sw/papi/lib/libpapi.a
+FLAGS =  -I/opt/sw/papi/include
+PROGC = <your file>.cx
+RM= /bin/rm
+
+
+#all rule
+
+OBJSC=$(PROGC:%.cx=%.o)
+
+
+all: $(PROGC)
+
+$(PROGC): $(OBJSC)
+	$(LDC)  $(OBJS) $< $(LD_FLAGS) -o $@
+
+%.o: %.c
+	$(CC) $(FLAGS) -c $^ -o $@
+
+
+
+#clean rule
+clean:
+	$(RM) -rf *.o *.x *.cx *.mod
+
